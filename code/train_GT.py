@@ -13,6 +13,7 @@ import sys
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, jaccard_score
 
 dpath = '/home/dhodwo/venv/dataset/whole/'
+spath = '/home/dhodwo/venv/results/'
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
@@ -21,10 +22,12 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 lr = 5e-5
 epochs = 30
 batch = 16
+H_info = [lr, epochs, batch]
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
+        NET_NAME = sys.argv[1]
         NN = CLS_MODEL.Network(sys.argv[1], lr)
     else:
         NN = CLS_MODEL.Network('inceptionv3', lr)
@@ -37,6 +40,11 @@ if __name__ == '__main__':
     trloss, tracc_cls, trf1 = [], [], []
     #infcla, inference = [], []
     ###
+    
+
+    if not os.path.exist(spath+NET_NAME+'/'):
+        os.makedirs(spath+NET_NAME+'/', exist_ok=True)
+
     for ep in range(epochs):
         trloss_, tracccls_, trf1_ = [], [], []
         for trs in range(pts):
@@ -64,3 +72,6 @@ if __name__ == '__main__':
         trloss.append(np.average(trloss_))
         tracc_cls.append(np.average(traccls_))
         trf1.append(np.average(trf1_))
+
+    #Save the result
+    np.savez(spath+NET_NAME+'/tr_result.npz',loss = trloss, acc = tracc_cls, f1 = trf1, Hyper=H_info)
