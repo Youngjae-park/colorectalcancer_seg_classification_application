@@ -1,0 +1,235 @@
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:22: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/dhodwo/venv/lib/python3.5/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2020-10-26 19:07:46.356880: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-10-26 19:07:46.409278: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN V major: 7 minor: 0 memoryClockRate(GHz): 1.455
+pciBusID: 0000:1a:00.0
+2020-10-26 19:07:46.409460: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2020-10-26 19:07:46.410444: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2020-10-26 19:07:46.411330: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2020-10-26 19:07:46.411561: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2020-10-26 19:07:46.412670: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2020-10-26 19:07:46.413528: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2020-10-26 19:07:46.416160: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-26 19:07:46.420017: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-10-26 19:07:46.420363: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2020-10-26 19:07:46.450070: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3500000000 Hz
+2020-10-26 19:07:46.450997: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0xaf565a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-26 19:07:46.451036: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-26 19:07:46.747980: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0xaf89870 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-10-26 19:07:46.748004: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN V, Compute Capability 7.0
+2020-10-26 19:07:46.748874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN V major: 7 minor: 0 memoryClockRate(GHz): 1.455
+pciBusID: 0000:1a:00.0
+2020-10-26 19:07:46.748914: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2020-10-26 19:07:46.748923: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2020-10-26 19:07:46.748930: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2020-10-26 19:07:46.748937: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2020-10-26 19:07:46.748944: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2020-10-26 19:07:46.748950: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2020-10-26 19:07:46.748957: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-26 19:07:46.750386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-10-26 19:07:46.750419: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2020-10-26 19:07:46.751578: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-26 19:07:46.751588: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-10-26 19:07:46.751592: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-10-26 19:07:46.753265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11036 MB memory) -> physical GPU (device: 0, name: TITAN V, pci bus id: 0000:1a:00.0, compute capability: 7.0)
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:29: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From /home/dhodwo/venv/lib/python3.5/site-packages/tensorflow_core/contrib/layers/python/layers/layers.py:1634: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+WARNING:tensorflow:From /home/dhodwo/venv/lib/python3.5/site-packages/tensorflow_core/python/layers/core.py:332: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:32: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv1D` instead.
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:35: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:36: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /home/dhodwo/venv/code/models/CLS_MODEL.py:43: The name tf.InteractiveSession is deprecated. Please use tf.compat.v1.InteractiveSession instead.
+
+2020-10-26 19:07:55.489646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN V major: 7 minor: 0 memoryClockRate(GHz): 1.455
+pciBusID: 0000:1a:00.0
+2020-10-26 19:07:55.489711: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2020-10-26 19:07:55.489724: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2020-10-26 19:07:55.489736: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2020-10-26 19:07:55.489748: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2020-10-26 19:07:55.489760: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2020-10-26 19:07:55.489771: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2020-10-26 19:07:55.489783: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-26 19:07:55.491200: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-10-26 19:07:55.491227: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-26 19:07:55.491234: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-10-26 19:07:55.491240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-10-26 19:07:55.496176: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11036 MB memory) -> physical GPU (device: 0, name: TITAN V, pci bus id: 0000:1a:00.0, compute capability: 7.0)
+2020-10-26 19:08:09.692044: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-10-26 19:08:10.913599: W tensorflow/stream_executor/cuda/ptxas_utils.cc:116] *** WARNING *** You are using ptxas 9.0.424, which is older than 9.2.88. ptxas 9.x before 9.2.88 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+
+You do not need to update to CUDA 9.2.88; cherry-picking the ptxas binary is sufficient.
+2020-10-26 19:08:11.050896: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+/home/dhodwo/venv/code/preprocess.py:19: H5pyDeprecationWarning: dataset.value has been deprecated. Use dataset[()] instead.
+  matx, laby = dat['matx'].value, dat['laby'].value
+/home/dhodwo/venv/code/preprocess.py:20: H5pyDeprecationWarning: dataset.value has been deprecated. Use dataset[()] instead.
+  m_s = dat['norminfo'].value
+Training Started
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  0
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  1
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  2
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  3
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  4
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  5
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  6
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  7
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  8
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  9
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  10
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  11
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  12
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  13
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  14
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  15
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  16
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  17
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  18
+/home/dhodwo/venv/dataset/whole/whole-0.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-1.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-2.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-3.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-4.hdf5 is loaded!!
+/home/dhodwo/venv/dataset/whole/whole-5.hdf5 is loaded!!
+ep:  19

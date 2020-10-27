@@ -46,6 +46,8 @@ class Network:
 
     def train(self, pl_in, pl_out):
         self.sess.run(self.train_op, {self.datx:pl_in, self.daty_cls:pl_out})
+    
+    
 
     def result_info(self, pl_in, pl_out):
         l, pl, a = self.sess.run([self.cost, self.predict, self.accuracy], {self.datx:pl_in, self.daty_cls:pl_out})

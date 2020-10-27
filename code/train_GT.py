@@ -20,7 +20,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 #Hyperparameters
 lr = 5e-5
-epochs = 30
+epochs = 20
 batch = 16
 H_info = [lr, epochs, batch]
 
@@ -30,6 +30,7 @@ if __name__ == '__main__':
         NET_NAME = sys.argv[1]
         NN = CLS_MODEL.Network(sys.argv[1], lr)
     else:
+        NET_NAME = 'inceptionv3'
         NN = CLS_MODEL.Network('inceptionv3', lr)
     pts = len(os.listdir(dpath))-1 #except norm-info.npz
     NN.placehold(256,256)
@@ -42,9 +43,10 @@ if __name__ == '__main__':
     ###
     
 
-    if not os.path.exist(spath+NET_NAME+'/'):
+    if not os.path.exists(spath+NET_NAME+'/'):
         os.makedirs(spath+NET_NAME+'/', exist_ok=True)
 
+    print('Training Started')
     for ep in range(epochs):
         trloss_, tracccls_, trf1_ = [], [], []
         for trs in range(pts):
@@ -70,8 +72,11 @@ if __name__ == '__main__':
             ypred = np.concatenate(ypred)
             trf1_.append(f1_score(ytr, ypred, average='macro'))
         trloss.append(np.average(trloss_))
-        tracc_cls.append(np.average(traccls_))
+        tracc_cls.append(np.average(tracccls_))
         trf1.append(np.average(trf1_))
+        print('ep: ',str(ep))
+        #print('trloss_, tracccls_, trf1_')
+        #print(np.average(trloss_), np.average(tracccls_), np.average(trf1_))
 
     #Save the result
     np.savez(spath+NET_NAME+'/tr_result.npz',loss = trloss, acc = tracc_cls, f1 = trf1, Hyper=H_info)
