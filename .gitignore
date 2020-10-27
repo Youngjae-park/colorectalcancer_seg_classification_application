@@ -5,4 +5,7 @@ share/
 lib/
 etc/
 include/
-
+results/
+weights/
+*.swp
+*.pyc

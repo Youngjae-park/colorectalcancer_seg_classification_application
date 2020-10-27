@@ -10,12 +10,11 @@ import os
 import tensorflow as tf
 import numpy as np
 
-def data_load(dpath, pts,TODO='train'):
-    if TODO=='train':
+def data_load(dpath, pts,TODO='train_CLS'):
+    #data_load for classification train dataset
+    if TODO == 'train_CLS':
         dat = h5py.File(dpath+'whole-'+str(pts)+'.hdf5', 'r')
         print(dpath+'whole-'+str(pts)+'.hdf5'+' is loaded!!')
-        # matx, laby = dat['matx'].value, dat['laby'].value
-        # m_s = dat['norminfo'].value
         matx, laby = dat['matx'].value, dat['laby'].value
         m_s = dat['norminfo'].value
 
@@ -28,7 +27,25 @@ def data_load(dpath, pts,TODO='train'):
         #one-hot for classification
         laby = tf.keras.utils.to_categorical(laby, num_classes=3)
         return [matx, laby], m_s
-    elif TODO=='inference':
+    
+    #data_load for segmentation train dataset
+    elif TODO == 'train_SEG':
+        dat = h5py.File(dpath+'whole-'+str(pts)+'.hdf5', 'r')
+        print(dpath+'whole-'+str(pts)+'.hdf5'+' is loaded!!')
+        matx, maty = dat['matx'].value, dat['maty'].value
+        m_s = dat['norminfo'].value
+        
+        maty = maty.astype(np.float32)
+        del dat
+
+        #normalize
+        for ch in range(matx.shape[-1]):
+            matx[:,:,:,ch] = (matx[:,:,:,ch]-m_s[ch][0])/m_s[ch][1]
+        
+        maty = np.expand_dims(maty, axis=-1)
+        return [matx, maty], m_s
+
+    elif TODO == 'inference':
         #FILL THE CODE HERE
         pass
         

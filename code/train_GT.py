@@ -32,7 +32,9 @@ if __name__ == '__main__':
     else:
         NET_NAME = 'inceptionv3'
         NN = CLS_MODEL.Network('inceptionv3', lr)
+    
     pts = len(os.listdir(dpath))-1 #except norm-info.npz
+    
     NN.placehold(256,256)
     NN.classification_model()
     NN.session_init() #global vars init
@@ -50,7 +52,7 @@ if __name__ == '__main__':
     for ep in range(epochs):
         trloss_, tracccls_, trf1_ = [], [], []
         for trs in range(pts):
-            trains, ninfo = preprocess.data_load(dpath, trs, TODO='train')
+            trains, ninfo = preprocess.data_load(dpath, trs, TODO='train_CLS')
             ntr = len(trains[0])
             ytr = np.argmax(trains[1], axis=1)
             ypred = []
