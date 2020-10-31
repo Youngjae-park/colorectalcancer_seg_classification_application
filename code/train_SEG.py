@@ -82,5 +82,5 @@ if __name__ == '__main__':
     ### Save results ###
     if not os.path.exists(result_path+NET_NAME+'/'):
         os.makedirs(result_path+NET_NAME+'/', exist_ok=True)
-    np.savez(result_path+NET_NAME+'/tr_result.npz', loss = trloss, acc = tracc_seg)
+    np.savez(result_path+NET_NAME+'/tr_result.npz', loss = trloss, acc = tracc_seg, Hyper = H_info)
 

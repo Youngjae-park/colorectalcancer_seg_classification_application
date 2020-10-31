@@ -13,7 +13,7 @@ import sys
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, jaccard_score
 
 dpath = '/home/dhodwo/venv/dataset/whole/'
-spath = '/home/dhodwo/venv/results/'
+spath = '/home/dhodwo/venv/results/CLS/'
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
