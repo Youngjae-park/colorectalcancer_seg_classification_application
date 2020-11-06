@@ -3,7 +3,7 @@
 """
 Created on 2020. 10. 26. (MON) 21:39:12 KST
 
-@author: jinhee
+@author: youngjae
 """
 
 import tensorflow as tf
@@ -39,6 +39,7 @@ class Network:
     def __init__(self, model_, lr_):
         self.model_name = model_
         self.lr = lr_
+        self.wpath = '/home/dhodwo/venv/weights/'+self.model_name+'/SEG/'
 
     def placehold_getNN(self, x_shape_, y_shape_, channel=3, cls=1):
         self.x_shape = x_shape_
@@ -76,5 +77,9 @@ class Network:
     def saver_init(self, epochs):
         self.saver = tf.train.Saver(max_to_keep=epochs)
 
-    def save(self, path, ep):
+    def save(self, path=self.wpath, ep):
         self.saver.save(self.sess, path, global_step = ep+1)
+
+    def get_weights(self, ep):
+        fwpath = self.wpath + 'epoch-'+str(ep)
+        self.saver.restore(self.sess, fwpath)

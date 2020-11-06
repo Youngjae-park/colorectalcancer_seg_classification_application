@@ -8,11 +8,14 @@ Created on Fri Oct 16 22:31:16 2020
 import tensorflow as tf
 from classification_models.tfkeras import Classifiers
 
+
 class Network:
     def __init__(self, model_, lr_):
         self.model_name = model_
         self.model, _ = Classifiers.get(model_)
         self.lr = lr_
+    
+        self.wpath = '/home/dhodwo/venv/weights/'+self.model_name+'/CLS/'
     
     def placehold(self, x_shape_, y_shape_, channel=3, cls=3):
         self.x_shape = x_shape_
@@ -21,6 +24,7 @@ class Network:
         self.cls = cls
         self.datx = tf.placeholder(tf.float32, (None, self.x_shape, self.x_shape, channel), name='datx')
         self.daty_cls = tf.placeholder(tf.float32, (None, channel), name='daty_cls')
+    
     def classification_model(self):
         self.model = self.model(include_top=False, input_shape=(self.x_shape, self.x_shape, self.channel), classes=self.cls, weights='imagenet')
         
@@ -47,8 +51,16 @@ class Network:
     def train(self, pl_in, pl_out):
         self.sess.run(self.train_op, {self.datx:pl_in, self.daty_cls:pl_out})
     
-    
-
     def result_info(self, pl_in, pl_out):
         l, pl, a = self.sess.run([self.cost, self.predict, self.accuracy], {self.datx:pl_in, self.daty_cls:pl_out})
         return l, pl, a
+
+    def saver_init(self, epochs):
+        self.saver = tf.train.Saver(max_to_keep=epochs)
+
+    def save(self, ep, path):
+        self.saver.save(self.sess, path, global_step = ep+1)
+
+    def get_weights(self, ep):
+        fwpath = self.wpath + 'epoch-'+str(ep)
+        self.saver.restore(self.sess, fwpath)

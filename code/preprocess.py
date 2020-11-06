@@ -32,8 +32,9 @@ def data_load(dpath, pts,TODO='train_CLS'):
     elif TODO == 'train_SEG':
         dat = h5py.File(dpath+'whole-'+str(pts)+'.hdf5', 'r')
         print(dpath+'whole-'+str(pts)+'.hdf5'+' is loaded!!')
-        matx, maty = dat['matx'].value, dat['maty'].value
-        m_s = dat['norminfo'].value
+        matx, maty = dat['matx'][()], dat['maty'][()]
+        coord = dat['coord'][()]
+        m_s = dat['norminfo'][()]
         
         maty = maty.astype(np.float32)
         del dat
@@ -43,7 +44,7 @@ def data_load(dpath, pts,TODO='train_CLS'):
             matx[:,:,:,ch] = (matx[:,:,:,ch]-m_s[ch][0])/m_s[ch][1]
         
         maty = np.expand_dims(maty, axis=-1)
-        return [matx, maty], m_s
+        return [matx, maty, coord], m_s
 
     elif TODO == 'inference':
         #FILL THE CODE HERE
@@ -65,3 +66,21 @@ def data_augmentation(x):
             augx.append(np.rot90(x[bt], 3))
 
     return np.array(augx)
+
+def makeup_img(mat, coord, mode='overwrite'):
+    true_mat = np.zeros((np.max(coord[:,0])+256, np.max(coord[:,1])+256), dtype=np.float32)
+
+    for p in range(len(coord)):
+        sw, sh = coord[p]
+        ew, eh = sw+256, sh+256
+
+        org = true_mat[sw:ew, sh:eh]
+        new = mat[p]
+        if mode == 'overwrite':
+            mask = org == 0
+            org[mask] = new[mask]
+        elif mode == 'max_prob':
+            max_ = np.maximum(org, new)
+            true_mat[sw:ew, sh:eh] = max_
+    
+    return true_mat.round()

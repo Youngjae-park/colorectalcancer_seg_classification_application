@@ -3,7 +3,7 @@
 """
 Created on 2020. 10. 26. (MON) 21:39:12 KST
 
-@author: jinhee
+@author: youngjae
 """
 
 import numpy as np
@@ -68,6 +68,15 @@ if __name__ == '__main__':
                 NN.train(b_x, b_ym)
                 loss, b_ymat, pmat = NN.result_info(b_x, b_ym)
                 
+                """
+                print(b_ymat.shape) => (16, 65536) 65536 is 256*256
+                print(b_ymat[:10]) => 0 or 1
+                print(pmat.shape) => same as b_ymat
+                print(pmat[:10]) => same as b_ymat
+                """
+                uniq = np.unique(pmat)
+                print(uniq)
+
                 trloss_.append(loss)
                 tjaccard = jaccard_score(b_ymat, pmat, average='samples')
                 traccseg_.append(tjaccard)

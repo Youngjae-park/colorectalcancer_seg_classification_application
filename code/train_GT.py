@@ -14,6 +14,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_sc
 
 dpath = '/home/dhodwo/venv/dataset/whole/'
 spath = '/home/dhodwo/venv/results/CLS/'
+w_path = '/home/dhodwo/venv/weights/'
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
@@ -33,6 +34,11 @@ if __name__ == '__main__':
         NET_NAME = 'inceptionv3'
         NN = CLS_MODEL.Network('inceptionv3', lr)
     
+    # Set the path where weights will be saved
+    w_path = w_path+NET_NAME+'/CLS/'
+    if not os.path.exists(w_path):
+        os.makedirs(w_path, exist_ok=True)
+
     pts = len(os.listdir(dpath))-1 #except norm-info.npz
     
     NN.placehold(256,256)
@@ -76,9 +82,13 @@ if __name__ == '__main__':
         trloss.append(np.average(trloss_))
         tracc_cls.append(np.average(tracccls_))
         trf1.append(np.average(trf1_))
+        
+        NN.save(w_path+'epoch', ep) #NN.save => global_step = ep+1
+
         print('ep: ',str(ep))
         #print('trloss_, tracccls_, trf1_')
         #print(np.average(trloss_), np.average(tracccls_), np.average(trf1_))
 
     #Save the result
     np.savez(spath+NET_NAME+'/tr_result.npz',loss = trloss, acc = tracc_cls, f1 = trf1, Hyper=H_info)
+
